@@ -1,0 +1,9 @@
+To install:
+
+sudo setup.py install
+
+* add flatemails to installed apps:
+
+INSTALLED_APPS = (
+    'flatemails',
+)
