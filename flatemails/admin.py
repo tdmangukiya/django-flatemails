@@ -1,14 +1,18 @@
 from models import *
 from django.contrib import admin
-from simplecart.orders import SHOP_ADMIN_SITE
+from django.utils.translation import ugettext_lazy as _
+
+class AlternativeContentInline(admin.StackedInline):
+    model = AlternativeContent
 
 class FlatEmailAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {'fields': ('key', 'title', 'from_email', 'to_email', 'content', 'sites')}),
-        ('Advanced options', {'classes': ('collapse',), 'fields': ('template_name',)}),
+        (_('Advanced options'), {'classes': ('collapse',), 'fields': ('template_name',)}),
     )
     list_display = ('key', 'title')
     list_filter = ('sites',)
     search_fields = ('key', 'title')
+    inlines = [AlternativeContentInline]
     
-SHOP_ADMIN_SITE.register(FlatEmail, FlatEmailAdmin)
+admin.site.register(FlatEmail, FlatEmailAdmin)

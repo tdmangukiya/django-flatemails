@@ -1,0 +1,27 @@
+[
+    {
+        "pk": 1, 
+        "model": "flatemails.flatemail", 
+        "fields": {
+            "to_email": "", 
+            "title": "Test Email", 
+            "template_name": "", 
+            "sites": [
+                1
+            ], 
+            "from_email": "test@example.com", 
+            "content": "This is plain text", 
+            "key": "test"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "flatemails.alternativecontent", 
+        "fields": {
+            "content": "<html>\r\n<head>&nbsp;</head>\r\n<body>\r\n<p>This is html</p>\r\n</body>\r\n</hml>", 
+            "template_name": "", 
+            "flat_email": 1, 
+            "content_type": "text/html"
+        }
+    }
+]
