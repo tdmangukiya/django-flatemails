@@ -1,0 +1,1 @@
+Django Flatemail System to allow for manageable email templating, much like flat pages.
